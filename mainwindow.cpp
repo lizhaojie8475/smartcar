@@ -362,6 +362,8 @@ void MainWindow::board_init()
 
 
     ui->explain->setText("当前动作：");
+    ui->ai_obs->setText("AI障碍:X10");
+    ui->human_obs->setText("玩家障碍:X10");
     myStatus = 0;
 
     mystep.clear();
@@ -378,6 +380,8 @@ void MainWindow::board_init()
     mychess[0].y = 3;
     mychess[1].x = 6;
     mychess[1].y = 3;
+    mychess[0].obsNum = 10;
+    mychess[1].obsNum = 10;
 }
 
 void MainWindow::on_btn11_clicked()
@@ -1904,6 +1908,10 @@ void MainWindow::on_gamestart_clicked()
         mychess[0].y = 3;
         mychess[1].x = 6;
         mychess[1].y = 3;
+        mychess[0].obsNum = 10;
+        mychess[1].obsNum = 10;
+        ui->ai_obs->setText("AI障碍:X10");
+        ui->human_obs->setText("玩家障碍:X10");
         for(int i=0; i<7; i++)
         {
             for(int j=0; j<7; j++)
@@ -1962,6 +1970,7 @@ void MainWindow::on_gamestart_clicked()
                 {
                     littleOBS[AIstep[0].kind].status = Obstacle;
                     littleOBS[AIstep[1].kind].status = Obstacle;
+                    mychess[0].obsNum --;
                     if(AIstep[0].kind < 42)
                         littleOBS[AIstep[0].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);border:1px solid #ababab;}");
                     else
@@ -5699,6 +5708,8 @@ void MainWindow::on_sure_clicked()
             playerStep2.kind = mystep[1].kind;
             player_pre_step.append(playerStep1);
             player_pre_step.append(playerStep2);
+            mychess[1].obsNum --;
+            ui->human_obs->setText(tr("玩家障碍:X%1").arg(mychess[1].obsNum));
         }
     }
     else
@@ -5769,6 +5780,9 @@ void MainWindow::on_sure_clicked()
         {
             littleOBS[AIstep[0].kind].status = Obstacle;
             littleOBS[AIstep[1].kind].status = Obstacle;
+            mychess[0].obsNum --;
+            ui->ai_obs->setText(tr("AI障碍:X%1").arg(mychess[0].obsNum));
+
             if(AIstep[0].kind < 42)
             {
                 littleOBS[AIstep[0].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);border:1px solid #ababab;}");
@@ -9783,6 +9797,8 @@ void MainWindow::on_big_regret_clicked()
             mySmall[smallY][smallX].status = Blank;
             mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
         }
+        mychess[1].obsNum ++;
+        ui->human_obs->setText(tr("玩家障碍:X%1").arg(mychess[1].obsNum));
     }
     else
         qDebug()<<"error:"<<player_pre_step.count();
@@ -9816,6 +9832,8 @@ void MainWindow::on_big_regret_clicked()
             mySmall[smallY][smallX].status = Blank;
             mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
         }
+        mychess[0].obsNum ++;
+        ui->ai_obs->setText(tr("AI障碍:X%1").arg(mychess[0].obsNum));
     }
     else
         qDebug()<<"error:"<<ai_pre_step.count();

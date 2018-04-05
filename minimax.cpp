@@ -234,8 +234,10 @@ int findAiMove(int depth, int alpha, int beta)
         }
         else//选择设置障碍
         {
+            //LuanXu(72);
             for(int j=0; j<72 && result > beta; j++)
             {
+                //int j = obsSEQ[j];
                 if(!auto_can_set(myOBS[j].obs1,myOBS[j].obs2))
                     continue;
 
@@ -246,6 +248,8 @@ int findAiMove(int depth, int alpha, int beta)
                     auto_deset(myOBS[j].obs1,myOBS[j].obs2);
                     continue;
                 }
+                //能运行到这里，表示ai已经成功使用了一块障碍
+                mychess[0].obsNum --;
 
                 int humanScore = findHumanMove(depth-1, result, beta);
                 if(humanScore < result)
@@ -270,6 +274,8 @@ int findAiMove(int depth, int alpha, int beta)
 
                 }
                auto_deset(myOBS[j].obs1,myOBS[j].obs2);
+               //deset之后ai恢复一块障碍
+               mychess[0].obsNum ++;
             }
         }
     }
@@ -349,8 +355,10 @@ int findHumanMove(int depth, int alpha, int beta)
         }
         else//选择设置障碍
         {
+            //LuanXu(72);
             for(int j=0; j<72 && result < alpha; j++)
             {
+                //int j = obsSEQ[j];
                 if(!auto_can_set(myOBS[j].obs1,myOBS[j].obs2))
                     continue;
 
@@ -362,13 +370,14 @@ int findHumanMove(int depth, int alpha, int beta)
                     auto_deset(myOBS[j].obs1,myOBS[j].obs2);
                     continue;
                 }
-
+                mychess[1].obsNum --;
                 int humanScore = findAiMove(depth-1, alpha, result);
                 if(humanScore > result)
                 {
                     result = humanScore;
                 }
                 auto_deset(myOBS[j].obs1,myOBS[j].obs2);
+                mychess[1].obsNum ++;
             }
         }
     }

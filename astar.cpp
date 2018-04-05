@@ -289,6 +289,6 @@ int score_for_AStar()
         }
     }
 
-    dis_score = AI_dis - Human_dis;
+    dis_score = AI_dis - Human_dis + mychess[1].obsNum - mychess[0].obsNum;
     return (dis_score);
 }
