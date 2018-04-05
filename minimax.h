@@ -19,6 +19,14 @@ typedef struct
     int obs2;
 }mOBSTACLE;
 
+typedef struct
+{
+    int x;
+    int y;
+    int status;
+    QPushButton *btn;
+}SMALL;
+
 
 
 int findAiMove(int depth, int alpha, int beta);//找出ai当前的最优操作
@@ -26,5 +34,8 @@ int findHumanMove(int depth, int alpha, int beta);//找出玩家的最优操作
 bool matchFinish();//判断比赛是否完成
 int boardValue();//AI会想尽办法使玩家分数降低，玩家想办法提高分数
 int MTDF(int test, int depth);
+bool auto_can_set(int index1, int index2);
+void auto_deset(int index1, int index2);
+void LuanXu(int length);
 
 #endif // MINIMAX_H

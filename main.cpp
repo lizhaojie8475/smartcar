@@ -14,6 +14,7 @@ QVector<QPoint> myPoint;//按顺序记录myBoard中的棋子坐标
 CHESS mychess[2];//0记录AI棋子的信息，1记录玩家棋子的信息
 singalOBS littleOBS[84];
 mOBSTACLE myOBS[72];
+SMALL mySmall[6][6];
 STEP AIstep[2];//记录ai的操作
 int step_num = 0;//记录是一步操作还是两步操作
 int AIdepth;

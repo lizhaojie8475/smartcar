@@ -25,6 +25,7 @@ extern int step_num;//记录是一步操作还是两步操作
 extern singalOBS littleOBS[84];
 extern mOBSTACLE myOBS[72];
 extern int AIdepth;
+extern SMALL mySmall[6][6];
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -336,12 +337,28 @@ void MainWindow::board_init()
     littleOBS[81].x = 6 , littleOBS[81].y = 3 , littleOBS[81].kind = 1, littleOBS[81].btn = ui->obs741;
     littleOBS[82].x = 6 , littleOBS[82].y = 4 , littleOBS[82].kind = 1, littleOBS[82].btn = ui->obs751;
     littleOBS[83].x = 6 , littleOBS[83].y = 5 , littleOBS[83].kind = 1, littleOBS[83].btn = ui->obs761;
+//小障碍的初始化
+    mySmall[0][0].btn = ui->small0 , mySmall[0][1].btn = ui->small1 , mySmall[0][2].btn = ui->small2 , mySmall[0][3].btn = ui->small3 , mySmall[0][4].btn = ui->small4 , mySmall[0][5].btn = ui->small5;
+    mySmall[1][0].btn = ui->small6 , mySmall[1][1].btn = ui->small7 , mySmall[1][2].btn = ui->small8 , mySmall[1][3].btn = ui->small9 , mySmall[1][4].btn = ui->small10 , mySmall[1][5].btn = ui->small11;
+    mySmall[2][0].btn = ui->small12 , mySmall[2][1].btn = ui->small13 , mySmall[2][2].btn = ui->small14 , mySmall[2][3].btn = ui->small15 , mySmall[2][4].btn = ui->small16 , mySmall[2][5].btn = ui->small17;
+    mySmall[3][0].btn = ui->small18 , mySmall[3][1].btn = ui->small19 , mySmall[3][2].btn = ui->small20 , mySmall[3][3].btn = ui->small21 , mySmall[3][4].btn = ui->small22 , mySmall[3][5].btn = ui->small23;
+    mySmall[4][0].btn = ui->small24 , mySmall[4][1].btn = ui->small25 , mySmall[4][2].btn = ui->small26 , mySmall[4][3].btn = ui->small27 , mySmall[4][4].btn = ui->small28 , mySmall[4][5].btn = ui->small29;
+    mySmall[5][0].btn = ui->small30 , mySmall[5][1].btn = ui->small31 , mySmall[5][2].btn = ui->small32 , mySmall[5][3].btn = ui->small33 , mySmall[5][4].btn = ui->small34 , mySmall[5][5].btn = ui->small35;
 
     for(int i=0; i<84; i++)
     {
         littleOBS[i].status = Blank;
     }
 
+    for(int i=0; i<6; i++)
+    {
+        for(int j=0; j<6; j++)
+        {
+            mySmall[i][j].x = i;
+            mySmall[i][j].y = j;
+            mySmall[i][j].status = Blank;
+        }
+    }
 
 
     ui->explain->setText("当前动作：");
@@ -1800,21 +1817,24 @@ void MainWindow::on_obstacle_clicked()
     ui->obstacle->setStyleSheet("QPushButton#obstacle{background-color: #cce4f7 ;border: 1px solid #005499; border-radius:3px;}");
     ui->move->setStyleSheet("");
     ui->explain->setText("当前动作：设置两格障碍");
+
     for(int i=0;i<84;i++)
     {
         if(littleOBS[i].status == Blank && littleOBS[i].kind == 0)
         {
-            littleOBS[i].btn->setStyleSheet("QPushButton:hover{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏hover.png);}");
+            littleOBS[i].btn->setStyleSheet("QPushButton{border : none;background-color : white;}"
+                                            "QPushButton:hover{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏hover.png);}");
         }
         else if(littleOBS[i].status == Blank && littleOBS[i].kind == 1)
         {
-            littleOBS[i].btn->setStyleSheet("QPushButton:hover{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏hover.png);}");
+            littleOBS[i].btn->setStyleSheet("QPushButton{border : none;background-color : white;}"
+                                            "QPushButton:hover{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏hover.png);}");
         }
 
     }
-    for(int i=0;i<7;i++)
+    for(int i=0; i<7; i++)
     {
-        for(int j=0;j<7;j++)
+        for(int j=0; j<7; j++)
         {
             if(finalBoard[i][j] == Blank)
                 finalButton[i][j]->setStyleSheet("");
@@ -1828,7 +1848,7 @@ void MainWindow::on_move_clicked()
     ui->move->setStyleSheet("QPushButton#move{background-color: #cce4f7 ;border: 1px solid #005499; border-radius:3px;}");
     ui->obstacle->setStyleSheet("");
     ui->explain->setText("当前动作：移动一格");
-    for(int i=0;i<7;i++)
+    for(int i=0; i<7; i++)
     {
         for(int j=0;j<7;j++)
         {
@@ -1836,11 +1856,11 @@ void MainWindow::on_move_clicked()
                 finalButton[i][j]->setStyleSheet("QPushButton:hover{border: 1px solid #adadad;background-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/玩家棋子hover.png);}");
         }
     }
-    for(int i=0;i<84;i++)
+    for(int i=0; i<84 ;i++)
     {
         if(littleOBS[i].status == Blank)
         {
-            littleOBS[i].btn->setStyleSheet("");
+            littleOBS[i].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
         }
     }
 }
@@ -1858,7 +1878,15 @@ void MainWindow::on_gamestart_clicked()
         for(int i=0; i<84; i++)
         {
             littleOBS[i].status = Blank;
-            littleOBS[i].btn->setStyleSheet("");
+            littleOBS[i].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
+        for(int i=0; i<6; i++)
+        {
+            for(int j=0; j<6; j++)
+            {
+                mySmall[i][j].status = Blank;
+                mySmall[i][j].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+            }
         }
 
         mystep.clear();
@@ -1950,11 +1978,6 @@ void MainWindow::on_gamestart_clicked()
                     ai_pre_step.append(aiStep2);
                     step_num = 0;
                 }
-                if(!canfinish(mychess[0].x,mychess[0].y,1) || !canfinish(mychess[1].x,mychess[1].y,2))
-                {
-                    QMessageBox::warning(this,"warning","AI故障：您不可以用障碍将路封住！！！");
-                    return;
-                }
             }
             else
             {
@@ -1965,6 +1988,7 @@ void MainWindow::on_gamestart_clicked()
         }
     }
 }
+
 bool MainWindow::canMove(int x0, int y0, int x1, int y1)
 {
     if(x0-x1 == 1 && y0 == y1)
@@ -5637,7 +5661,7 @@ void MainWindow::on_sure_clicked()
             playerStep.y = mychess[1].y;
             player_pre_step.append(playerStep);
             mychess[1].x = mystep[0].x;
-            mychess[1].y = mystep[0].y;            
+            mychess[1].y = mystep[0].y;
         }
     }
     else if(mystep.count() == 2)
@@ -5647,11 +5671,24 @@ void MainWindow::on_sure_clicked()
             QMessageBox::warning(this,"warning","您不可以用障碍将路封住！！！");
 
             littleOBS[mystep[0].kind].status = Blank;
-            littleOBS[mystep[0].kind].btn->setStyleSheet("");
+            littleOBS[mystep[0].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
 
             littleOBS[mystep[1].kind].status = Blank;
-            littleOBS[mystep[1].kind].btn->setStyleSheet("");
+            littleOBS[mystep[1].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
 
+            int minindex = mystep[0].kind < mystep[1].kind ? mystep[0].kind : mystep[1].kind;
+            int smallX = littleOBS[minindex].x;
+            int smallY = littleOBS[minindex].y;
+            if(minindex < 42)
+            {
+                mySmall[smallX][smallY].status = Blank;
+                mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+            }
+            else if(minindex > 41)
+            {
+                mySmall[smallY][smallX].status = Blank;
+                mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+            }
             mystep.clear();
             return;
         }
@@ -5675,22 +5712,25 @@ void MainWindow::on_sure_clicked()
     ui->obstacle->setEnabled(true);
     ui->obstacle->setStyleSheet("");
     ui->move->setStyleSheet("");
-    for(int i=0; i<7; i++)
+    for(int i=0;i<7;i++)
     {
-        for(int j=0; j<7; j++)
+        for(int j=0;j<7;j++)
         {
             if(finalBoard[i][j] == Blank)
                 finalButton[i][j]->setStyleSheet("");
         }
     }
+    int obsNum = 0;
     for(int i=0; i<84; i++)
     {
         if(littleOBS[i].status == Blank)
-            littleOBS[i].btn->setStyleSheet("");
+            littleOBS[i].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        else
+            obsNum ++;
     }
     //执行ai的算法
-
     AIdepth = 4;
+
     int score = findAiMove(AIdepth,999,-999);
     qDebug()<<score;
 
@@ -5730,25 +5770,33 @@ void MainWindow::on_sure_clicked()
             littleOBS[AIstep[0].kind].status = Obstacle;
             littleOBS[AIstep[1].kind].status = Obstacle;
             if(AIstep[0].kind < 42)
+            {
                 littleOBS[AIstep[0].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);border:1px solid #ababab;}");
-            else
-                littleOBS[AIstep[0].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png);border:1px solid #ababab;}");
-
-            if(AIstep[1].kind < 42)
                 littleOBS[AIstep[1].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);border:1px solid #ababab;}");
+
+                int minindex = AIstep[0].kind < AIstep[1].kind ? AIstep[0].kind : AIstep[1].kind;
+                int smallX = littleOBS[minindex].x;
+                int smallY = littleOBS[minindex].y;
+                mySmall[smallX][smallY].status = Obstacle;
+                mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);}");
+            }
             else
+            {
+                littleOBS[AIstep[0].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png);border:1px solid #ababab;}");
                 littleOBS[AIstep[1].kind].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png);border:1px solid #ababab;}");
+
+                int minindex = AIstep[0].kind < AIstep[1].kind ? AIstep[0].kind : AIstep[1].kind;
+                int smallX = littleOBS[minindex].x;
+                int smallY = littleOBS[minindex].y;
+                mySmall[smallY][smallX].status = Obstacle;
+                mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png);}");
+            }
             STEP aiStep1,aiStep2;
             aiStep1.kind = AIstep[0].kind;
             aiStep2.kind = AIstep[1].kind;
             ai_pre_step.append(aiStep1);
             ai_pre_step.append(aiStep2);
             step_num = 0;
-        }
-        if(!canfinish(mychess[0].x,mychess[0].y,1) || !canfinish(mychess[1].x,mychess[1].y,2))
-        {
-            QMessageBox::warning(this,"warning","AI故障：您不可以用障碍将路封住！！！");
-            return;
         }
     }
     else
@@ -5757,8 +5805,6 @@ void MainWindow::on_sure_clicked()
         qDebug()<<"stepnum is:"<<step_num;
         return;
     }
-
-
 }
 
 void MainWindow::on_regret_clicked()
@@ -5773,8 +5819,30 @@ void MainWindow::on_regret_clicked()
 
     if(mystep[i].status == 1)
     {
-        littleOBS[mystep[i].kind].status = Blank;
-        littleOBS[mystep[i].kind].btn->setStyleSheet("");
+        if(mystep.count() == 1)
+        {
+            littleOBS[mystep[i].kind].status = Blank;
+            littleOBS[mystep[i].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
+        else if(mystep.count() == 2)
+        {
+            littleOBS[mystep[i].kind].status = Blank;
+            littleOBS[mystep[i].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+
+            int minindex = mystep[0].kind < mystep[1].kind ? mystep[0].kind : mystep[1].kind;
+            int smallX = littleOBS[minindex].x;
+            int smallY = littleOBS[minindex].y;
+            if(minindex < 42)
+            {
+                mySmall[smallX][smallY].status = Blank;
+                mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+            }
+            else if(minindex > 41)
+            {
+                mySmall[smallY][smallX].status = Blank;
+                mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+            }
+        }
     }
     else
     {
@@ -5785,7 +5853,6 @@ void MainWindow::on_regret_clicked()
         finalButton[mychess[1].x][mychess[1].y]->setStyleSheet("QPushButton{background-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/玩家棋子.png);border:1px solid #ababab;}");
     }
     mystep.removeLast();
-
 }
 
 bool MainWindow::canSet(int index1, int index2)
@@ -5796,9 +5863,30 @@ bool MainWindow::canSet(int index1, int index2)
     else
     {
         if((abs(littleOBS[index1].x - littleOBS[index2].x) ==1 && littleOBS[index1].y == littleOBS[index2].y) || (abs(littleOBS[index1].y - littleOBS[index2].y) ==1 && littleOBS[index1].x == littleOBS[index2].x))
-            return true;
+        {
+            int minindex = index1 < index2 ? index1 : index2;
+            int smallX = littleOBS[minindex].x;
+            int smallY = littleOBS[minindex].y;
+
+            if(minindex < 42 && mySmall[smallX][smallY].status == Blank)
+            {
+                mySmall[smallX][smallY].status = Obstacle;
+                mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png);border:1px solid #ababab;}");
+                return true;
+            }
+            else if(minindex > 41 && mySmall[smallY][smallX].status == Blank)
+            {
+                mySmall[smallY][smallX].status = Obstacle;
+                mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border-image: url(:/build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png);border:1px solid #ababab;}");
+                return true;
+            }
+            else
+                return false;
+        }
         else
+        {
             return false;
+        }
     }
 }
 
@@ -9679,8 +9767,22 @@ void MainWindow::on_big_regret_clicked()
     {
         littleOBS[player_pre_step[0].kind].status = Blank;
         littleOBS[player_pre_step[1].kind].status = Blank;
-        littleOBS[player_pre_step[0].kind].btn->setStyleSheet("");
-        littleOBS[player_pre_step[1].kind].btn->setStyleSheet("");
+        littleOBS[player_pre_step[0].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        littleOBS[player_pre_step[1].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+
+        int minindex = player_pre_step[0].kind < player_pre_step[1].kind ? player_pre_step[0].kind : player_pre_step[1].kind;
+        int smallX = littleOBS[minindex].x;
+        int smallY = littleOBS[minindex].y;
+        if(minindex < 42)
+        {
+            mySmall[smallX][smallY].status = Blank;
+            mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
+        else if(minindex > 41)
+        {
+            mySmall[smallY][smallX].status = Blank;
+            mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
     }
     else
         qDebug()<<"error:"<<player_pre_step.count();
@@ -9698,8 +9800,22 @@ void MainWindow::on_big_regret_clicked()
     {
         littleOBS[ai_pre_step[0].kind].status = Blank;
         littleOBS[ai_pre_step[1].kind].status = Blank;
-        littleOBS[ai_pre_step[0].kind].btn->setStyleSheet("");
-        littleOBS[ai_pre_step[1].kind].btn->setStyleSheet("");
+        littleOBS[ai_pre_step[0].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        littleOBS[ai_pre_step[1].kind].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+
+        int minindex = ai_pre_step[0].kind < ai_pre_step[1].kind ? ai_pre_step[0].kind :ai_pre_step[1].kind;
+        int smallX = littleOBS[minindex].x;
+        int smallY = littleOBS[minindex].y;
+        if(minindex < 42)
+        {
+            mySmall[smallX][smallY].status = Blank;
+            mySmall[smallX][smallY].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
+        else if(minindex > 41)
+        {
+            mySmall[smallY][smallX].status = Blank;
+            mySmall[smallY][smallX].btn->setStyleSheet("QPushButton{border : none;background-color : white;}");
+        }
     }
     else
         qDebug()<<"error:"<<ai_pre_step.count();

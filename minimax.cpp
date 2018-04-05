@@ -5,6 +5,7 @@
 #include <QMessageBox>
 #include <QDebug>
 #include <QVector>
+#include <QTime>
 
 extern int finalBoard[7][7];
 extern CHESS mychess[2];
@@ -13,12 +14,19 @@ extern singalOBS littleOBS[84];
 extern STEP AIstep[2];//记录ai的操作
 extern int step_num;//记录是一步操作还是两步操作
 extern int AIdepth;
+extern SMALL mySmall[6][6];
 
 static QStack<CHESS> myStack;
 static int dx_ai[4] = {1,0,0,-1};
 static int dy_ai[4] = {0,1,-1,0};
 static int dx_human[4] = {-1,0,0,1};
 static int dy_human[4] = {0,-1,1,0};
+static int obsSEQ[72] = {0,1,2,3,4,5,6,7,8,9,10,11,12,
+                         13,14,15,16,17,18,19,20,21,22,23,24,
+                         25,26,27,28,29,30,31,32,33,34,35,36,
+                         37,38,39,40,41,42,43,44,45,46,47,48,
+                         49,50,51,52,53,54,55,56,57,58,59,60,
+                         61,62,63,64,65,66,67,68,69,70,71};
 
 bool matchFinish()
 {
@@ -48,6 +56,70 @@ int MTDF(int test, int depth)
     return score;
 }
 
+bool auto_can_set(int index1, int index2)
+{
+    if(littleOBS[index1].kind != littleOBS[index2].kind)
+        return false;
+    if(littleOBS[index1].status == Obstacle || littleOBS[index2].status == Obstacle)
+        return false;
+
+    else
+    {
+        if((abs(littleOBS[index1].x - littleOBS[index2].x) ==1 && littleOBS[index1].y == littleOBS[index2].y) || (abs(littleOBS[index1].y - littleOBS[index2].y) ==1 && littleOBS[index1].x == littleOBS[index2].x))
+        {
+            int minindex = index1 < index2 ? index1 : index2;
+            int smallX = littleOBS[minindex].x;
+            int smallY = littleOBS[minindex].y;
+
+            if(minindex < 42 && mySmall[smallX][smallY].status == Blank)
+            {
+                mySmall[smallX][smallY].status = Obstacle;
+                return true;
+            }
+            else if(minindex > 41 && mySmall[smallY][smallX].status == Blank)
+            {
+                mySmall[smallY][smallX].status = Obstacle;
+                return true;
+            }
+            else
+                return false;
+        }
+        else
+        {
+            return false;
+        }
+    }
+}
+void auto_deset(int index1, int index2)
+{
+    littleOBS[index1].status = Blank;
+    littleOBS[index2].status = Blank;
+
+    int minindex = index1 < index2 ? index1 : index2;
+    int smallX = littleOBS[minindex].x;
+    int smallY = littleOBS[minindex].y;
+    if(minindex < 42)
+    {
+        mySmall[smallX][smallY].status = Blank;
+    }
+    else if(minindex > 41)
+    {
+        mySmall[smallY][smallX].status = Blank;
+    }
+}
+void LuanXu(int length)
+{
+    for(int i=0; i<length; i++)
+    {
+        QTime t;
+        t = QTime::currentTime();
+        qsrand(t.msec() + t.second()*1000);
+        int r = i + qrand() % (length - i);
+        int temp = obsSEQ[i];
+        obsSEQ[i] = obsSEQ[r];
+        obsSEQ[r] = temp;
+    }
+}
 int boardValue()
 {
     for(int i=0; i<7; i++)
@@ -164,14 +236,14 @@ int findAiMove(int depth, int alpha, int beta)
         {
             for(int j=0; j<72 && result > beta; j++)
             {
-                if(littleOBS[myOBS[j].obs1].status != Blank || littleOBS[myOBS[j].obs2].status != Blank)
+                if(!auto_can_set(myOBS[j].obs1,myOBS[j].obs2))
                     continue;
+
                 littleOBS[myOBS[j].obs1].status = Obstacle;
                 littleOBS[myOBS[j].obs2].status = Obstacle;
                 if(!MainWindow::canfinish(mychess[0].x,mychess[0].y,1) || !MainWindow::canfinish(mychess[1].x,mychess[1].y,2))//判断这两个障碍会不会将路堵住，如果会就撤回
                 {
-                    littleOBS[myOBS[j].obs1].status = Blank;
-                    littleOBS[myOBS[j].obs2].status = Blank;
+                    auto_deset(myOBS[j].obs1,myOBS[j].obs2);
                     continue;
                 }
 
@@ -197,9 +269,7 @@ int findAiMove(int depth, int alpha, int beta)
                     }
 
                 }
-
-                littleOBS[myOBS[j].obs1].status = Blank;
-                littleOBS[myOBS[j].obs2].status = Blank;
+               auto_deset(myOBS[j].obs1,myOBS[j].obs2);
             }
         }
     }
@@ -281,7 +351,7 @@ int findHumanMove(int depth, int alpha, int beta)
         {
             for(int j=0; j<72 && result < alpha; j++)
             {
-                if(littleOBS[myOBS[j].obs1].status != Blank || littleOBS[myOBS[j].obs2].status != Blank)
+                if(!auto_can_set(myOBS[j].obs1,myOBS[j].obs2))
                     continue;
 
                 littleOBS[myOBS[j].obs1].status = Obstacle;
@@ -289,8 +359,7 @@ int findHumanMove(int depth, int alpha, int beta)
 
                 if(!MainWindow::canfinish(mychess[0].x,mychess[0].y,1) || !MainWindow::canfinish(mychess[1].x,mychess[1].y,2))//判断这两个障碍会不会将路堵住，如果会就撤回
                 {
-                    littleOBS[myOBS[j].obs1].status = Blank;
-                    littleOBS[myOBS[j].obs2].status = Blank;
+                    auto_deset(myOBS[j].obs1,myOBS[j].obs2);
                     continue;
                 }
 
@@ -299,9 +368,7 @@ int findHumanMove(int depth, int alpha, int beta)
                 {
                     result = humanScore;
                 }
-
-                littleOBS[myOBS[j].obs1].status = Blank;
-                littleOBS[myOBS[j].obs2].status = Blank;
+                auto_deset(myOBS[j].obs1,myOBS[j].obs2);
             }
         }
     }
