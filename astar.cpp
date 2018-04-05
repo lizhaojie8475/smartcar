@@ -148,35 +148,35 @@ void get_neighbors(PAStarNode curr_node, PAStarNode end_node)
     int x = curr_node->x;
     int y = curr_node->y;
 
-    if ( ( x + 1 ) >= 0 && ( x + 1 ) < 8 && y >= 0 && y < 8 )
+    if ( ( x + 1 ) >= 0 && ( x + 1 ) < 7 && y >= 0 && y < 7 )
     {
-        if(littleOBS[56 + y*7 + x].status == Blank)
+        if(littleOBS[42 + y*6 + x].status == Blank)
             insert_to_open( x+1, y, curr_node, end_node);
     }
 
-    if ( ( x - 1 ) >= 0 && ( x - 1 ) < 8 && y >= 0 && y < 8 )
+    if ( ( x - 1 ) >= 0 && ( x - 1 ) < 8 && y >= 0 && y < 7 )
     {
-        if(littleOBS[56 + y*7 + x-1].status == Blank)
+        if(littleOBS[42 + y*6 + x-1].status == Blank)
             insert_to_open( x-1, y, curr_node, end_node);
     }
 
-    if ( x >= 0 && x < 8 && ( y + 1 ) >= 0 && ( y + 1 ) < 8 )
+    if ( x >= 0 && x < 7 && ( y + 1 ) >= 0 && ( y + 1 ) < 7 )
     {
-        if(littleOBS[x*7 + y].status == Blank)
+        if(littleOBS[x*6 + y].status == Blank)
             insert_to_open( x, y+1, curr_node, end_node);
     }
 
-    if ( x >= 0 && x < 8 && ( y - 1 ) >= 0 && ( y - 1 ) < 8 )
+    if ( x >= 0 && x < 7 && ( y - 1 ) >= 0 && ( y - 1 ) < 7 )
     {
-        if(littleOBS[x*7 + y-1].status == Blank)
+        if(littleOBS[x*6 + y-1].status == Blank)
             insert_to_open( x, y-1, curr_node, end_node);
     }
 }
 void astar_init()
 {
-    for(int i=0; i<8; i++)
+    for(int i=0; i<7; i++)
     {
-        for(int j=0; j<8; j++)
+        for(int j=0; j<7; j++)
         {
             map_maze[i][j].g = 0;
             map_maze[i][j].h = 0;
@@ -197,7 +197,6 @@ int minDis(int startX,int startY,int endX,int endY)
     AStarNode *end_node;
     AStarNode *curr_node;
     int isfound;
-    int myDis = -1;
 //    float MaxDis;//归一化时用到的最大曼哈顿距离
 
     astar_init();
@@ -232,13 +231,7 @@ int minDis(int startX,int startY,int endX,int endY)
     }
     if(isfound)
     {
-        curr_node = end_node;
-        while(curr_node)
-        {
-            curr_node = curr_node->parent;
-            myDis ++;
-        }
-        return myDis;
+        return end_node->g;
     }
     else
         return -1;
@@ -250,10 +243,10 @@ int score_for_AStar()
     int AI_dis = 999,Human_dis = 999,AI_SEC = 999,Human_SEC = 999;//所有可行路径长度的最小值
     int AI_num = 0,Human_num = 0;//所有可行路径的个数
     //求ai的分数
-    for(int i=0; i<8; i++)
+    for(int i=0; i<7; i++)
     {
         int nowScore;
-        nowScore = minDis(mychess[0].x,mychess[0].y,7,i);
+        nowScore = minDis(mychess[0].x,mychess[0].y,6,i);
         if(nowScore >= 0)
         {
 
@@ -272,7 +265,7 @@ int score_for_AStar()
     }
 
     //求human的分数
-    for(int i=0; i<8; i++)
+    for(int i=0; i<7; i++)
     {
         if(finalBoard[0][i] == Obstacle)
         {
@@ -297,7 +290,5 @@ int score_for_AStar()
     }
 
     dis_score = AI_dis - Human_dis;
-//    num_score = Human_num - AI_num;
-
     return (dis_score);
 }

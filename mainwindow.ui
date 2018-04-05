@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>992</width>
-    <height>980</height>
+    <width>929</width>
+    <height>921</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,7 +19,7 @@
      <rect>
       <x>20</x>
       <y>50</y>
-      <width>581</width>
+      <width>511</width>
       <height>31</height>
      </rect>
     </property>
@@ -29,7 +29,7 @@
      <rect>
       <x>20</x>
       <y>10</y>
-      <width>201</width>
+      <width>171</width>
       <height>31</height>
      </rect>
     </property>
@@ -37,7 +37,7 @@
    <widget class="QPushButton" name="connect">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>230</x>
       <y>10</y>
       <width>81</width>
       <height>31</height>
@@ -56,7 +56,7 @@
    <widget class="QPushButton" name="send">
     <property name="geometry">
      <rect>
-      <x>390</x>
+      <x>340</x>
       <y>10</y>
       <width>81</width>
       <height>31</height>
@@ -75,7 +75,7 @@
    <widget class="QPushButton" name="clear">
     <property name="geometry">
      <rect>
-      <x>500</x>
+      <x>450</x>
       <y>10</y>
       <width>81</width>
       <height>31</height>
@@ -96,7 +96,7 @@
      <rect>
       <x>20</x>
       <y>90</y>
-      <width>581</width>
+      <width>511</width>
       <height>191</height>
      </rect>
     </property>
@@ -104,7 +104,7 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>10</y>
       <width>71</width>
       <height>31</height>
@@ -123,7 +123,7 @@
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>60</y>
       <width>71</width>
       <height>31</height>
@@ -142,7 +142,7 @@
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>110</y>
       <width>71</width>
       <height>31</height>
@@ -161,7 +161,7 @@
    <widget class="QLineEdit" name="x_line">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>640</x>
       <y>10</y>
       <width>141</width>
       <height>31</height>
@@ -171,7 +171,7 @@
    <widget class="QLineEdit" name="y_line">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>640</x>
       <y>60</y>
       <width>141</width>
       <height>31</height>
@@ -181,7 +181,7 @@
    <widget class="QLineEdit" name="a_line">
     <property name="geometry">
      <rect>
-      <x>710</x>
+      <x>640</x>
       <y>110</y>
       <width>141</width>
       <height>31</height>
@@ -191,7 +191,7 @@
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>880</x>
+      <x>810</x>
       <y>20</y>
       <width>93</width>
       <height>41</height>
@@ -210,7 +210,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>880</x>
+      <x>810</x>
       <y>80</y>
       <width>93</width>
       <height>41</height>
@@ -229,7 +229,7 @@
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>160</y>
       <width>41</width>
       <height>31</height>
@@ -248,7 +248,7 @@
    <widget class="QLabel" name="x_label">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>620</x>
       <y>160</y>
       <width>291</width>
       <height>31</height>
@@ -267,7 +267,7 @@
    <widget class="QLabel" name="y_label">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>620</x>
       <y>210</y>
       <width>291</width>
       <height>31</height>
@@ -286,7 +286,7 @@
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>210</y>
       <width>41</width>
       <height>31</height>
@@ -305,7 +305,7 @@
    <widget class="QLabel" name="a_label">
     <property name="geometry">
      <rect>
-      <x>690</x>
+      <x>620</x>
       <y>250</y>
       <width>291</width>
       <height>31</height>
@@ -327,7 +327,7 @@
    <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
-      <x>630</x>
+      <x>560</x>
       <y>250</y>
       <width>41</width>
       <height>31</height>
@@ -348,8 +348,8 @@
      <rect>
       <x>20</x>
       <y>300</y>
-      <width>961</width>
-      <height>621</height>
+      <width>901</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1578,43 +1578,11 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn18_2">
-      <property name="geometry">
-       <rect>
-        <x>521</x>
-        <y>10</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn15_2">
       <property name="geometry">
        <rect>
         <x>302</x>
         <y>10</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn28_2">
-      <property name="geometry">
-       <rect>
-        <x>521</x>
-        <y>83</y>
         <width>60</width>
         <height>60</height>
        </rect>
@@ -1718,7 +1686,7 @@
      <widget class="QLabel" name="label_7">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>10</y>
         <width>101</width>
         <height>51</height>
@@ -1737,7 +1705,7 @@
      <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>800</x>
+        <x>690</x>
         <y>10</y>
         <width>131</width>
         <height>51</height>
@@ -1756,7 +1724,7 @@
      <widget class="QPushButton" name="obstacle">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>150</y>
         <width>121</width>
         <height>41</height>
@@ -1781,7 +1749,7 @@
      <widget class="QPushButton" name="move">
       <property name="geometry">
        <rect>
-        <x>810</x>
+        <x>700</x>
         <y>150</y>
         <width>121</width>
         <height>41</height>
@@ -1806,7 +1774,7 @@
      <widget class="QLabel" name="explain">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>360</y>
         <width>261</width>
         <height>41</height>
@@ -1825,7 +1793,7 @@
      <widget class="QPushButton" name="gamestart">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>80</y>
         <width>121</width>
         <height>41</height>
@@ -1847,7 +1815,7 @@
      <widget class="QComboBox" name="first_last">
       <property name="geometry">
        <rect>
-        <x>810</x>
+        <x>700</x>
         <y>80</y>
         <width>121</width>
         <height>41</height>
@@ -1863,7 +1831,7 @@
      <widget class="QPushButton" name="regret">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>220</y>
         <width>121</width>
         <height>41</height>
@@ -1888,7 +1856,7 @@
      <widget class="QPushButton" name="sure">
       <property name="geometry">
        <rect>
-        <x>810</x>
+        <x>700</x>
         <y>220</y>
         <width>121</width>
         <height>41</height>
@@ -1998,38 +1966,6 @@
        <rect>
         <x>434</x>
         <y>10</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs170">
-      <property name="geometry">
-       <rect>
-        <x>507</x>
-        <y>10</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs270">
-      <property name="geometry">
-       <rect>
-        <x>507</x>
-        <y>83</y>
         <width>15</width>
         <height>60</height>
        </rect>
@@ -2252,38 +2188,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs811">
-      <property name="geometry">
-       <rect>
-        <x>521</x>
-        <y>69</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn38_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>156</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn35_2">
       <property name="geometry">
        <rect>
@@ -2364,22 +2268,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs821">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>142</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="obs221">
       <property name="geometry">
        <rect>
@@ -2400,22 +2288,6 @@
       <property name="geometry">
        <rect>
         <x>287</x>
-        <y>156</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs370">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
         <y>156</y>
         <width>15</width>
         <height>60</height>
@@ -2639,22 +2511,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs831">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>215</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="obs331">
       <property name="geometry">
        <rect>
@@ -2756,22 +2612,6 @@
        <rect>
         <x>228</x>
         <y>215</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs841">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>288</y>
         <width>60</width>
         <height>15</height>
        </rect>
@@ -2895,22 +2735,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs851">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>361</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="obs151">
       <property name="geometry">
        <rect>
@@ -3012,22 +2836,6 @@
        <rect>
         <x>374</x>
         <y>361</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs861">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>434</y>
         <width>60</width>
         <height>15</height>
        </rect>
@@ -3142,150 +2950,6 @@
         <y>434</y>
         <width>60</width>
         <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs871">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs671">
-      <property name="geometry">
-       <rect>
-        <x>374</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs171">
-      <property name="geometry">
-       <rect>
-        <x>9</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs771">
-      <property name="geometry">
-       <rect>
-        <x>447</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs571">
-      <property name="geometry">
-       <rect>
-        <x>301</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs271">
-      <property name="geometry">
-       <rect>
-        <x>82</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs371">
-      <property name="geometry">
-       <rect>
-        <x>155</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs471">
-      <property name="geometry">
-       <rect>
-        <x>228</x>
-        <y>507</y>
-        <width>60</width>
-        <height>15</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn48_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>229</y>
-        <width>60</width>
-        <height>60</height>
        </rect>
       </property>
       <property name="cursor">
@@ -3490,44 +3154,12 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs470">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
-        <y>229</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="obs420">
       <property name="geometry">
        <rect>
         <x>141</x>
         <y>229</y>
         <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn58_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>302</y>
-        <width>60</width>
         <height>60</height>
        </rect>
       </property>
@@ -3590,22 +3222,6 @@
       <property name="geometry">
        <rect>
         <x>141</x>
-        <y>302</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs570">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
         <y>302</y>
         <width>15</width>
         <height>60</height>
@@ -3765,22 +3381,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn68_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>375</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn62_2">
       <property name="geometry">
        <rect>
@@ -3909,22 +3509,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="obs670">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
-        <y>375</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="btn63_2">
       <property name="geometry">
        <rect>
@@ -4008,22 +3592,6 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn78_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>448</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="obs720">
       <property name="geometry">
        <rect>
@@ -4044,22 +3612,6 @@
       <property name="geometry">
        <rect>
         <x>287</x>
-        <y>448</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs770">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
         <y>448</y>
         <width>15</width>
         <height>60</height>
@@ -4251,253 +3803,10 @@
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="btn88_2">
-      <property name="geometry">
-       <rect>
-        <x>520</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn81_2">
-      <property name="geometry">
-       <rect>
-        <x>9</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"/>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn84_2">
-      <property name="geometry">
-       <rect>
-        <x>228</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs860">
-      <property name="geometry">
-       <rect>
-        <x>433</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs810">
-      <property name="geometry">
-       <rect>
-        <x>68</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn82_2">
-      <property name="geometry">
-       <rect>
-        <x>82</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn86_2">
-      <property name="geometry">
-       <rect>
-        <x>374</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs870">
-      <property name="geometry">
-       <rect>
-        <x>506</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs820">
-      <property name="geometry">
-       <rect>
-        <x>141</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn83_2">
-      <property name="geometry">
-       <rect>
-        <x>155</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs830">
-      <property name="geometry">
-       <rect>
-        <x>214</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn87_2">
-      <property name="geometry">
-       <rect>
-        <x>447</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs840">
-      <property name="geometry">
-       <rect>
-        <x>287</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="btn85_2">
-      <property name="geometry">
-       <rect>
-        <x>301</x>
-        <y>521</y>
-        <width>60</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="obs850">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>521</y>
-        <width>15</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
      <widget class="QPushButton" name="big_regret">
       <property name="geometry">
        <rect>
-        <x>660</x>
+        <x>550</x>
         <y>280</y>
         <width>271</width>
         <height>51</height>
@@ -4527,7 +3836,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>992</width>
+     <width>929</width>
      <height>26</height>
     </rect>
    </property>

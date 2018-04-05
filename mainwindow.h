@@ -198,7 +198,6 @@ private slots:
 
     void on_move_clicked();
 
-
     void on_gamestart_clicked();
 
     void on_btn11_2_clicked();
@@ -215,24 +214,6 @@ private slots:
 
     void on_btn17_2_clicked();
 
-    void on_btn18_2_clicked();
-
-    void on_btn81_2_clicked();
-
-    void on_btn82_2_clicked();
-
-    void on_btn83_2_clicked();
-
-    void on_btn84_2_clicked();
-
-    void on_btn85_2_clicked();
-
-    void on_btn86_2_clicked();
-
-    void on_btn87_2_clicked();
-
-    void on_btn88_2_clicked();
-
     void on_btn71_2_clicked();
 
     void on_btn72_2_clicked();
@@ -246,8 +227,6 @@ private slots:
     void on_btn76_2_clicked();
 
     void on_btn77_2_clicked();
-
-    void on_btn78_2_clicked();
 
     void on_btn61_2_clicked();
 
@@ -263,8 +242,6 @@ private slots:
 
     void on_btn67_2_clicked();
 
-    void on_btn68_2_clicked();
-
     void on_btn51_2_clicked();
 
     void on_btn52_2_clicked();
@@ -278,8 +255,6 @@ private slots:
     void on_btn56_2_clicked();
 
     void on_btn57_2_clicked();
-
-    void on_btn58_2_clicked();
 
     void on_btn41_2_clicked();
 
@@ -295,8 +270,6 @@ private slots:
 
     void on_btn47_2_clicked();
 
-    void on_btn48_2_clicked();
-
     void on_btn31_2_clicked();
 
     void on_btn32_2_clicked();
@@ -311,8 +284,6 @@ private slots:
 
     void on_btn37_2_clicked();
 
-    void on_btn38_2_clicked();
-
     void on_btn21_2_clicked();
 
     void on_btn22_2_clicked();
@@ -326,8 +297,6 @@ private slots:
     void on_btn26_2_clicked();
 
     void on_btn27_2_clicked();
-
-    void on_btn28_2_clicked();
 
     void on_sure_clicked();
 
@@ -345,8 +314,6 @@ private slots:
 
     void on_obs160_clicked();
 
-    void on_obs170_clicked();
-
     void on_obs210_clicked();
 
     void on_obs220_clicked();
@@ -358,8 +325,6 @@ private slots:
     void on_obs250_clicked();
 
     void on_obs260_clicked();
-
-    void on_obs270_clicked();
 
     void on_obs310_clicked();
 
@@ -373,8 +338,6 @@ private slots:
 
     void on_obs360_clicked();
 
-    void on_obs370_clicked();
-
     void on_obs410_clicked();
 
     void on_obs420_clicked();
@@ -386,8 +349,6 @@ private slots:
     void on_obs450_clicked();
 
     void on_obs460_clicked();
-
-    void on_obs470_clicked();
 
     void on_obs510_clicked();
 
@@ -401,8 +362,6 @@ private slots:
 
     void on_obs560_clicked();
 
-    void on_obs570_clicked();
-
     void on_obs610_clicked();
 
     void on_obs620_clicked();
@@ -414,8 +373,6 @@ private slots:
     void on_obs650_clicked();
 
     void on_obs660_clicked();
-
-    void on_obs670_clicked();
 
     void on_obs710_clicked();
 
@@ -429,22 +386,6 @@ private slots:
 
     void on_obs760_clicked();
 
-    void on_obs770_clicked();
-
-    void on_obs810_clicked();
-
-    void on_obs820_clicked();
-
-    void on_obs830_clicked();
-
-    void on_obs840_clicked();
-
-    void on_obs850_clicked();
-
-    void on_obs860_clicked();
-
-    void on_obs870_clicked();
-
     void on_obs111_clicked();
 
     void on_obs121_clicked();
@@ -456,8 +397,6 @@ private slots:
     void on_obs151_clicked();
 
     void on_obs161_clicked();
-
-    void on_obs171_clicked();
 
     void on_obs211_clicked();
 
@@ -471,8 +410,6 @@ private slots:
 
     void on_obs261_clicked();
 
-    void on_obs271_clicked();
-
     void on_obs311_clicked();
 
     void on_obs321_clicked();
@@ -484,8 +421,6 @@ private slots:
     void on_obs351_clicked();
 
     void on_obs361_clicked();
-
-    void on_obs371_clicked();
 
     void on_obs411_clicked();
 
@@ -499,8 +434,6 @@ private slots:
 
     void on_obs461_clicked();
 
-    void on_obs471_clicked();
-
     void on_obs511_clicked();
 
     void on_obs521_clicked();
@@ -512,8 +445,6 @@ private slots:
     void on_obs551_clicked();
 
     void on_obs561_clicked();
-
-    void on_obs571_clicked();
 
     void on_obs611_clicked();
 
@@ -527,8 +458,6 @@ private slots:
 
     void on_obs661_clicked();
 
-    void on_obs671_clicked();
-
     void on_obs711_clicked();
 
     void on_obs721_clicked();
@@ -540,22 +469,6 @@ private slots:
     void on_obs751_clicked();
 
     void on_obs761_clicked();
-
-    void on_obs771_clicked();
-
-    void on_obs811_clicked();
-
-    void on_obs821_clicked();
-
-    void on_obs831_clicked();
-
-    void on_obs841_clicked();
-
-    void on_obs851_clicked();
-
-    void on_obs861_clicked();
-
-    void on_obs871_clicked();
 
     void on_big_regret_clicked();
 
