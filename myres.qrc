@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/ai棋子.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/玩家棋子.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/障碍.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/障碍hover.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/玩家棋子hover.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/竖栅栏hover.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/横栅栏hover.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/ai压玩家.png</file>
+        <file>../build-smartCar-Desktop_Qt_5_8_0_MinGW_32bit-Debug/玩家压ai.png</file>
+    </qresource>
+</RCC>
